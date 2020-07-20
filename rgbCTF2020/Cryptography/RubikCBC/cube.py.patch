@@ -1,0 +1,18 @@
+4c4
+< from rubik.maths import Point, Matrix
+---
+> from maths import Point, Matrix
+147c147
+<         cube_str = "".join(x for x in cube_str if x not in string.whitespace)
+---
+>         #cube_str = "".join(x for x in cube_str if x not in string.whitespace)
+184a185,191
+>     def raw(self):
+>         cl = self._color_list()
+>         assert len(cl) == 54
+>         if isinstance(cl[0], int):
+>             return bytearray(cl)
+>         return "".join(self._color_list())
+> 
+313a321
+>         return self.raw()
